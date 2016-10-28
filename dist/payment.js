@@ -236,11 +236,11 @@ var payment =
 	  } else {
 	    re = /(?:^|\s)(\d{4})$/;
 	  }
-	  if (re.test(value)) {
+	  if (re.test(value) && length < upperLength) {
 	    e.preventDefault();
 	    QJ.val(target, value + ' ' + digit);
 	    return QJ.trigger(target, 'change');
-	  } else if (re.test(value + digit)) {
+	  } else if (re.test(value + digit) && length < upperLength) {
 	    e.preventDefault();
 	    QJ.val(target, value + digit + ' ');
 	    return QJ.trigger(target, 'change');
